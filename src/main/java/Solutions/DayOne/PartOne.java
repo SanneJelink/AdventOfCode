@@ -1,4 +1,4 @@
-package Solutions.DayOne.PartOne;
+package Solutions.DayOne;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,12 +8,12 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class SonarSweep {
+public class PartOne {
 
     public void getInput() throws FileNotFoundException {
         var input = new ArrayList<Integer>();
 
-        File file = new File("Solutions/DayOne/PartOne/input.txt");
+        File file = new File("Solutions/DayOne/input.txt");
         Scanner sc = new Scanner(file);
 
         while (sc.hasNextLine())
@@ -22,8 +22,8 @@ public class SonarSweep {
 
     public int sonarSweep(List<Integer> depths) throws FileNotFoundException {
         var biggerThanLast = IntStream
-                .range(0, depths.size())
-                .filter(i -> i > 1 && depths.get(i - 1) > depths.get(i - 2))
+                .range(1, depths.size())
+                .filter(i -> depths.get(i) > depths.get(i - 1))
                 .mapToObj(depths::get)
                 .collect(Collectors.toList());
 
