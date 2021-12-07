@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 
-public class DayTwoTest {
+class DayTwoTest {
     DayTwo sut;
 
     DayTwoTest() {
@@ -13,9 +13,15 @@ public class DayTwoTest {
     }
 
     @Test
+    void PartOneWorks() throws FileNotFoundException {
+        var input = sut.getInput();
+        sut.divePartOne(input);
+
+    }
+
+    @Test
     void PartTwoWorks() throws FileNotFoundException {
         var input = sut.getInput();
-        sut.dive(input);
-
+        sut.divePartTwo(input);
     }
 }

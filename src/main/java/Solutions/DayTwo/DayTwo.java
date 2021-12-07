@@ -22,7 +22,7 @@ public class DayTwo {
         return input;
     }
 
-    public void dive(List<String> commands) {
+    public void divePartOne(List<String> commands) {
         var horizontal = 0;
         var depth = 0;
         for (String command : commands) {
@@ -36,6 +36,29 @@ public class DayTwo {
                     break;
                 case "up":
                     depth -= Integer.parseInt(splited[1]);
+                    break;
+            }
+        }
+        System.out.println(horizontal);
+        System.out.println(depth);
+    }
+
+    public void divePartTwo(List<String> commands) {
+        var horizontal = 0;
+        var depth = 0;
+        var aim = 0;
+        for (String command : commands) {
+            String[] splited = command.split("\\s+");
+            switch (splited[0]) {
+                case "forward":
+                    horizontal += Integer.parseInt(splited[1]);
+                    depth += aim * Integer.parseInt(splited[1]);
+                    break;
+                case "down":
+                    aim += Integer.parseInt(splited[1]);
+                    break;
+                case "up":
+                    aim -= Integer.parseInt(splited[1]);
                     break;
             }
         }
