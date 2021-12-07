@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class PartOne {
+public class DayOne {
 
     public ArrayList<Integer> getInput() throws FileNotFoundException {
         var input = new ArrayList<Integer>();

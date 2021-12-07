@@ -1,14 +1,15 @@
-package Solutions.DayOne;
+package Solutions;
 
+import Solutions.DayOne.DayOne;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 
 class DayOneTest {
-    PartOne sut;
+    DayOne sut;
 
     DayOneTest() {
-        sut = new PartOne();
+        sut = new DayOne();
     }
 
     @Test
