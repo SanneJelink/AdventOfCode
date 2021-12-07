@@ -5,16 +5,16 @@ import org.junit.jupiter.api.Test;
 import java.io.FileNotFoundException;
 
 class DayOneTest {
-    PartTwo sut;
+    PartOne sut;
 
     DayOneTest() {
-        sut = new PartTwo();
+        sut = new PartOne();
     }
 
     @Test
     void PartTwoWorks() throws FileNotFoundException {
         var input = sut.getInput();
-        System.out.println(sut.sonarSweep(input));
+        System.out.println(sut.sonarSweepPartTwo(input));
 
 //        Wrong: 1598,1596
     }

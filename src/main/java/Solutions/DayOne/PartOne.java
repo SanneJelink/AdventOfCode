@@ -10,21 +10,39 @@ import java.util.stream.IntStream;
 
 public class PartOne {
 
-    public void getInput() throws FileNotFoundException {
+    public ArrayList<Integer> getInput() throws FileNotFoundException {
         var input = new ArrayList<Integer>();
 
-        File file = new File("Solutions/DayOne/input.txt");
+        File file = new File("");
         Scanner sc = new Scanner(file);
 
         while (sc.hasNextLine())
             input.add(Integer.valueOf(sc.nextLine()));
+
+        return input;
     }
 
-    public int sonarSweep(List<Integer> depths) throws FileNotFoundException {
+    public int sonarSweepPartOne(List<Integer> depths) {
         var biggerThanLast = IntStream
                 .range(1, depths.size())
                 .filter(i -> depths.get(i) > depths.get(i - 1))
                 .mapToObj(depths::get)
+                .collect(Collectors.toList());
+
+        return biggerThanLast.size();
+    }
+
+    public int sonarSweepPartTwo(List<Integer> depths) {
+        var sums = new ArrayList<Integer>();
+
+        for (int i = 2; i < depths.size(); i++) {
+            sums.add(depths.get(i) + depths.get(i - 1) + depths.get(i - 2));
+        }
+
+        var biggerThanLast = IntStream
+                .range(1, sums.size() - 1)
+                .filter(i -> sums.get(i) > sums.get(i - 1))
+                .mapToObj(sums::get)
                 .collect(Collectors.toList());
 
         return biggerThanLast.size();
