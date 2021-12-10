@@ -26,6 +26,7 @@ public class DayThree {
 
         for (int i = 0; i < String.valueOf(input.get(0)).length(); i++) {
             int finalI = i;
+
             var bytes = input.stream()
                     .map(in -> Integer.parseInt(String.valueOf(in.charAt(finalI))))
                     .collect(Collectors.toList());

@@ -13,7 +13,7 @@ public class DayOne {
     public ArrayList<Integer> getInput() throws FileNotFoundException {
         var input = new ArrayList<Integer>();
 
-        File file = new File("");
+        File file = new File("/Users/SanneJelink/AdventOfCode/src/main/java/Solutions/DayOne/input.txt");
         Scanner sc = new Scanner(file);
 
         while (sc.hasNextLine())
@@ -40,7 +40,7 @@ public class DayOne {
         }
 
         var biggerThanLast = IntStream
-                .range(1, sums.size() - 1)
+                .range(1, sums.size())
                 .filter(i -> sums.get(i) > sums.get(i - 1))
                 .mapToObj(sums::get)
                 .collect(Collectors.toList());
